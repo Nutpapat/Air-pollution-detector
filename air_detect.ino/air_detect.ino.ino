@@ -24,7 +24,7 @@ void loop() {
     if(mq135>=42 || mq7>=131){
       Serial.println("Air quality is bad");
     }
-    else if(mq135<=20 || mq7<=20){
+    else if(mq135<=20 || mq7<=40){
       Serial.println("Air quality is good");
       }
     else{
