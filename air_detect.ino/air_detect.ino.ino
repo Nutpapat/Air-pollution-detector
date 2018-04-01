@@ -16,15 +16,15 @@ void setup() {
   lcd.begin();
   
   for(int i=15 ; i>0 ; i--){                            // wait 15 minute for stable value
-    Serial.print("Please wait for ");
+    Serial.print("Please wait ");
     Serial.print(i);
     Serial.println(" minute");
 
     lcd.setCursor(0, 0);
-    lcd.print("Please wait for ");
+    lcd.print("Please wait  ");
     lcd.setCursor(0, 1);
     lcd.print(i);
-    lcd.print(" minute");
+    lcd.print(" minute    ");
     delay(60000);                                     // 1 m
   }
 
