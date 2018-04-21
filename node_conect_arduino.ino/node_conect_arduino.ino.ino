@@ -7,19 +7,17 @@
 #define FIREBASE_HOST "compro-e7881.firebaseio.com"
 #define FIREBASE_AUTH "HzOjOuN2ExO7mXtbMlz6fPMBpfu0xBQrOnsA5kvD"
 SoftwareSerial NodeSerial(D2,D3); // RX | TX
-SoftwareSerial chat(D5,D6); // RX | TX
+
+
 
 void setup() {
 
   pinMode(D2, INPUT); 
 
   pinMode(D3, OUTPUT); 
-  
-  pinMode(D5, INPUT); 
 
-  pinMode(D6, OUTPUT);
   
-  chat.begin(4800);
+
   
   Serial.begin(9600);
 
@@ -40,8 +38,7 @@ void setup() {
   Serial.print("connected: ");
   Serial.println(WiFi.localIP());
   Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);
-  Firebase.setInt("MQ-135", 0);
-  Firebase.setInt("MQ-7", 0);
+  //Firebase.setString("state", "begin");
 
  }
 
@@ -57,11 +54,20 @@ void loop() {
     if (NodeSerial.read() == '\n') 
     
     {
-          if(mq135 >100)
-            chat.println(1);
-          else 
-            chat.println(0);
-            
+//          if(mq135 >100){
+
+//            Firebase.setString("state", "Bad Air");
+//            
+//          }
+//          else{ 
+
+//             Firebase.setString("state", "Good Air");
+//          }
+
+          NodeSerial.print(mq7);NodeSerial.print(" ");
+          NodeSerial.print(mq135);
+          NodeSerial.print("\n");
+          
           Serial.print("mq135 "); Serial.print(" : "); 
           Serial.println(mq135);
           //Firebase.pushFloat("MQ-135", mq135);
@@ -83,6 +89,6 @@ void loop() {
 
   }
 
-  delay(1000);
+  delay(1000); 
 
 } 
