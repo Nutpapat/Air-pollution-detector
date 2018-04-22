@@ -35,7 +35,7 @@ void loop() {
 
         if(ArduinoSerial.read() == '\n'){
            Serial.println(mq135);
-           if(mq135 > 40){
+           if(mq135 > 10){
             analogWrite(speedPinA, 0);
             digitalWrite(wheel1PinA, LOW);
             digitalWrite(wheel2PinA, LOW);
