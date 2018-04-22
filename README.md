@@ -3,22 +3,20 @@
 ## ![](/img/house.png)Introduction
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;สวัสดีครับวันนี้กลุ่ม air pollution detector เราได้สร้างเครื่องตรวจจับมลพิษทางอากาศโดยใช้เซ็นเซอร์ MQ7และ MQ135 ที่นำไปใช้กับการตรวจจับอากาศสามารถทำงานได้จริงโดยเครื่องตรวจจับอากาศเราจะนำมาใส่ในรถเพื่อเพิ่มความสะดวกในการตรวจจับอากาศโดยเราไม่ต้องเอาเครื่องไปวางตรวจตามจุดต่างๆเองแต่เราจะใช้ให้รถไปตรวจจับแทนเราและส่งข้อมูลขึ้นเว็บนอกจากนี้ตัวโปรแกรมที่ใช้บังคับรถและเครื่องตรวจจับอากาศยังสร้างจากโปรแกรมarduinoโดยการใช้เพียงภาษา C และ C# ในการเขียน
 ## ![](/img/spanner.png)Required Components
-- MQ135 Gas sensor
-- MQ7
-- Arduino Uno
-- เซ็นเซอร์วัดระยะทาง ultrasonic module hc-sr04
-- l298n motor driver module
-- โครงรถหุ่นยนต์ smart car 2wd robot car
-- arduino uno r3 acrylic case box
-- nodemcu esp8266
-- ลําโพงอิเล็กทรอนิกส์สัญญาณเตือนภัยออดไฟฟ้า dc 3-24v
-- 16X2 LCD
-- Breadboard
-- power bank
-- ที่ใส่ถ่าน
-- ถ่านลิเทียม18650 3 ก้อน
-- สายไฟจัมเปอร์
-## ![](/img/link.png)Board Connection
+
+MQ135 Gas sensor | Arduino Uno | สาย usb arduino | ultrasonic module hc-sr04 | 16X2 LCD 
+:-: | :-: | :-: | :-: | :-:
+<a href=""><img src="img/Mq-135-800x800.jpg" width="200px"></a>  | <a href=""><img src="img/item_XL_6186780_3246529.jpg" width="200px"></a> | <a href=""><img src="img/BB400.png" width="200px"></a> | <a href=""><img src="img/4.jpg" width="200px"></a> | <a href=""><img src="img/sku166911-1.jpg" width="200px"></a>
+
+l298n motor driver module | โครงรถหุ่นยนต์ smart car 2wd robot car | nodemcu esp8266 | ลําโพงอิเล็กทรอนิกส์สัญญาณเตือนภัยออดไฟฟ้า dc 3-24v
+:-: | :-: | :-: | :-:
+<a href=""><img src="img/F93HPKMID2XEAO7.LARGE.jpg" width="200px"></a>  | <a href=""><img src="img/kb.jpg" width="200px"></a> | <a href=""><img src="img/NodeMCU_ESP8266_development_board_1024x1024.jpg" width="200px"></a> | <a href=""><img src="img/ea.jpg" width="200px"></a> 
+
+Breadboard | power bank | ที่ใส่ถ่าน | ถ่านลิเทียม18650 3 ก้อน | สายไฟจัมเปอร์
+:-: | :-: | :-: | :-: | :-:
+<a href=""><img src="img/64-02.jpg" width="200px"></a>  | <a href=""><img src="img/7.jpg" width="200px"></a> | <a href=""><img src="img/c3.jpg" width="200px"></a> | <a href=""><img src="img/2.jpg" width="200px"></a> | <a href=""><img src="img/1.jpg" width="200px"></a>
+
+## ![](/img/broken-cable.png)Board Connection
 
 ![](/img/conect.png)
 
@@ -100,9 +98,9 @@
 ## ![](/img/collaboration.png)Team Members
 | | รหัสนักศึกษา        | ชื่อ | นามสกุล |
 |:-:| :-------------: |:----------:|:--------:|
-| <a href=""><img src="img/25395893_1581370198595984_5047220726156484094_n.jpg" width="100px"></a> | 60070007    | นายคาซูยา | โคมัทซึ |
-| <a href=""><img src="img/13010712_966871170075702_675313722522799637_n.jpg" width="100px"></a> | 60070024      | นางสาวณัฐปภัสร์  | อยู่ยง |
-| <a href=""><img src="img/26172201_928510553970521_4303904137770727840_o.jpg" width="100px"></a> | 60070025      | นายณัฐวุฒิ  | เตชะศรีบูรพา |
+| <a href=""><img src="img/25395893_1581370198595984_5047220726156484094_n.jpg" width="200px"></a> | 60070007    | นายคาซูยา | โคมัทซึ |
+| <a href=""><img src="img/13010712_966871170075702_675313722522799637_n.jpg" width="200px"></a> | 60070024      | นางสาวณัฐปภัสร์  | อยู่ยง |
+| <a href=""><img src="img/26172201_928510553970521_4303904137770727840_o.jpg" width="200px"></a> | 60070025      | นายณัฐวุฒิ  | เตชะศรีบูรพา |
 
 ## ![](/img/administrator.png)Assistant Teacher
 - ผศ. ดร. กิติ์สุชาติ พสุภา
