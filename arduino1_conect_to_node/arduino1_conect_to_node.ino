@@ -11,11 +11,9 @@ void setup()  {
 
 void loop() {
   while(ArduinoSerial.available() > 0){
-    int mq7= ArduinoSerial.parseInt();
     float mq135 = ArduinoSerial.parseFloat(); 
 
     if(ArduinoSerial.read() == '\n'){
-        Serial.println(mq7);
         Serial.println(mq135);  
     }
   }

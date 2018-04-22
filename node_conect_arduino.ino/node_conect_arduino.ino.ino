@@ -38,8 +38,8 @@ void setup() {
   Serial.print("connected: ");
   Serial.println(WiFi.localIP());
   Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);
-  //Firebase.setString("state", "begin");
-
+  Firebase.setString("state", "begin");
+  Firebase.setFloat("MQ135", 0);
  }
 
 void loop() {
@@ -48,23 +48,18 @@ void loop() {
 
   {
 
-    int mq7= NodeSerial.parseInt();
     float mq135 = NodeSerial.parseFloat(); 
-    int state=0;
     if (NodeSerial.read() == '\n') 
     
     {
-//          if(mq135 >100){
+          if(mq135 >10){
 
-//            Firebase.setString("state", "Bad Air");
-//            
-//          }
-//          else{ 
+            Firebase.setString("state", "Bad Air");
+          }
+          else{ 
+             Firebase.setString("state", "Good Air");
+          }
 
-//             Firebase.setString("state", "Good Air");
-//          }
-
-          NodeSerial.print(mq7);NodeSerial.print(" ");
           NodeSerial.print(mq135);
           NodeSerial.print("\n");
           
@@ -72,18 +67,15 @@ void loop() {
           Serial.println(mq135);
           //Firebase.pushFloat("MQ-135", mq135);
 
-          Serial.print("mq7 "); Serial.print(" : "); 
-          Serial.println(mq7);
-          //Firebase.pushInt("MQ-7", mq7);
-         
           StaticJsonBuffer<200> jsonBuffer;
           JsonObject& root = jsonBuffer.createObject();
           root["MQ-135"] = mq135;
-          root["MQ-7"] = mq7;
-          root["time"] = "1 minute";
+          root["time"] = "1 second";
           
           // append a new value to /logDHT
           String name = Firebase.push("logDHT", root);
+
+          Firebase.setFloat("MQ135", mq135);
 
     }
 
