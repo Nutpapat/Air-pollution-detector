@@ -48,11 +48,12 @@ void loop() {
 
   {
 
-    float mq135 = NodeSerial.parseFloat(); 
+    float mq135 = NodeSerial.parseFloat();
+    int detect = NodeSerial.parseInt(); 
     if (NodeSerial.read() == '\n') 
     
     {
-          if(mq135 >10){
+          if(detect == 0){
 
             Firebase.setString("state", "Bad Air");
           }
@@ -60,9 +61,7 @@ void loop() {
              Firebase.setString("state", "Good Air");
           }
 
-          NodeSerial.print(mq135);
-          NodeSerial.print("\n");
-          
+
           Serial.print("mq135 "); Serial.print(" : "); 
           Serial.println(mq135);
           //Firebase.pushFloat("MQ-135", mq135);
@@ -70,12 +69,13 @@ void loop() {
           StaticJsonBuffer<200> jsonBuffer;
           JsonObject& root = jsonBuffer.createObject();
           root["MQ-135"] = mq135;
-          root["time"] = "1 second";
+          root["ppm"] = "ppm";
           
           // append a new value to /logDHT
           String name = Firebase.push("logDHT", root);
 
           Firebase.setFloat("MQ135", mq135);
+          Firebase.setInt("detect", detect);
 
     }
 

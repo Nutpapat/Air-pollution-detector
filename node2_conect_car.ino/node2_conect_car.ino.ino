@@ -33,8 +33,7 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  Serial.println(Firebase.getFloat("MQ135"));
-  NodeSerial.print(Firebase.getFloat("MQ135"));
+  Serial.println(Firebase.getInt("detect"));
+  NodeSerial.print(Firebase.getFloat("detect"));
   NodeSerial.print('\n');
-  delay(1000);
 }

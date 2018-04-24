@@ -31,22 +31,22 @@ void loop() {
   Serial.println(sonar_right.ping_cm());
   // left
     while(ArduinoSerial.available() > 0){
-        float mq135 = ArduinoSerial.parseFloat(); 
+        int detect = ArduinoSerial.parseInt();  
 
         if(ArduinoSerial.read() == '\n'){
-           Serial.println(mq135);
-           if(mq135 > 10){
+           Serial.println(detect);
+           if(detect == 0){
             analogWrite(speedPinA, 0);
             digitalWrite(wheel1PinA, LOW);
             digitalWrite(wheel2PinA, LOW);
             analogWrite(speedPinB, 0);
             digitalWrite(wheel1PinB, LOW);
             digitalWrite(wheel2PinB, LOW);
-            delay(500);
+            delay(60000);
     }
         }
   }
-  if((sonar_left.ping_cm()<15 && sonar_left.ping_cm()!=0)|| (sonar_right.ping_cm()<15 && sonar_right.ping_cm()!=0)){
+  if((sonar_left.ping_cm()<20 && sonar_left.ping_cm()!=0)|| (sonar_right.ping_cm()<20 && sonar_right.ping_cm()!=0)){
       analogWrite(speedPinA, SPEED);
       digitalWrite(wheel1PinA, HIGH);
       digitalWrite(wheel2PinA, LOW);

@@ -13,7 +13,7 @@ void setup()
   pinMode(11,INPUT);
 
   pinMode(10,OUTPUT);
-
+  pinMode(2,INPUT);
   Serial.begin(9600);
 
   NanoSerial.begin(57600);           
@@ -23,9 +23,10 @@ void setup()
 void loop() {
   MQ135 gasSensor = MQ135(A0);
   mq135 = gasSensor.getPPM();
+  detect = digitalRead(2);
   Serial.println(mq135);
-
-  if(mq135 > 40){
+  Serial.println(digitalRead(2));
+  if(detect == 0){
     tone(buzzer, 1000);
   }
   else{
@@ -39,7 +40,8 @@ void loop() {
   lcd.print(" ppm");
 
 
-  NanoSerial.print(mq135);
+  NanoSerial.print(mq135);NanoSerial.print(" ");
+  NanoSerial.print(detect);
   NanoSerial.print("\n");
   delay(1000);
 
