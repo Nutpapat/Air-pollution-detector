@@ -20,7 +20,7 @@ Breadboard | power bank | ที่ใส่ถ่าน | ถ่านลิเ
 
 ## ![](/img/broken-cable.png)Board Connection
 
-![](/img/conect.png)
+![](/img/31223495_995918667229709_5035519447100555264_n.png)
 
 | motor driver module      | arduino uno ตัวที่ 1  |  
 | --------------- |:-------------:|       
