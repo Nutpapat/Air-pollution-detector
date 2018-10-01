@@ -2,8 +2,8 @@
 
 #include <SoftwareSerial.h>
 #include "FirebaseArduino.h"
-#define WIFI_SSID "HUAWEI P8 lite"
-#define WIFI_PASSWORD "0864057600"
+#define WIFI_SSID "xxxxxx"
+#define WIFI_PASSWORD "xxxxxxx"
 #define FIREBASE_HOST "compro-e7881.firebaseio.com"
 #define FIREBASE_AUTH "HzOjOuN2ExO7mXtbMlz6fPMBpfu0xBQrOnsA5kvD"
 SoftwareSerial NodeSerial(D2,D3); // RX | TX
